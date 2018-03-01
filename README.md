@@ -1,4 +1,7 @@
 # keltnerchannel
+
+[![Build Status](https://travis-ci.org/cpankaj/keltnerchannel.svg?branch=master)](https://travis-ci.org/cpankaj/keltnerchannel)
+
 Node JS module for Keltner Channel - technical indicator
 
 # Installation
