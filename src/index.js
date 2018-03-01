@@ -1,15 +1,8 @@
 'use strict';
 
-/**
- * Prints hello - a dummy function
- */
-export function printHello() {
-    console.log('hello');
-}
+import {sma} from './ma';
 
-/**
- * Prints world - a dummy function
- */
-export function printWorld() {
-    console.log('world');
-}
+module.exports = {
+    sma,
+};
+
