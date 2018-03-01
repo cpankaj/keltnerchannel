@@ -1,13 +1,13 @@
 {
   "name": "keltnerchannel",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Node JS implementation of keltner channel - technical indicator",
   "main": "dist/index.js",
   "scripts": {
     "lint": "eslint src test",
     "lint:fix": "eslint --fix src test",
     "build": "npm run lint:fix && babel src -d dist",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "npm test",
     "test": "npm run build && mocha"
   },
   "repository": {
