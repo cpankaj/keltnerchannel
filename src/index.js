@@ -1,9 +1,9 @@
 'use strict'
 
-function printHello() {
-    console.log('hello world')
+export function printHello() {
+    console.log('hello')
 }
 
-module.exports = {
-    printHello
+export function printWorld() {
+    console.log('world')
 }
