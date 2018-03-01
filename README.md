@@ -1,2 +1,2 @@
 # keltnerchannel
-Node JS module for Keltner Channel - technical analysis
+Node JS module for Keltner Channel - technical indicator
