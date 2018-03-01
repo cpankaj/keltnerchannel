@@ -59,3 +59,9 @@ typings/
 
 # Babel output folder
 dist/
+
+# JSDoc output folder
+out/
+
+# Mac
+.DS_Store

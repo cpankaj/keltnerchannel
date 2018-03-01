@@ -34,7 +34,9 @@ export function sma(data, period) {
         mas.push(val);
     }
 
-    mas = mas.map((x) => (x/period));
+    for (let i = 0; i < mas.length; i++) {
+        mas[i] /= period;
+    }
 
     return mas;
 }

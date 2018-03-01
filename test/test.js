@@ -1,5 +1,5 @@
-let expect = require('chai').expect;
-let sma = require('../dist/index').sma;
+const expect = require('chai').expect;
+const sma = require('../dist/index').sma;
 
 describe('Simple Moving Average', function() {
     it('should return an Array', function() {
@@ -13,5 +13,14 @@ describe('Simple Moving Average', function() {
     it('should handle empty input', function() {
         let ma = sma([], 4);
         expect(ma).to.have.lengthOf(0);
+   });
+   it('should handle big array', function() {
+        let arr = [];
+        for (let i = 0; i < 1000000; i++) {
+            arr.push(Math.random() * 100);
+        }
+        let period = 20;
+        let size = arr.length - period + 1;
+        expect(sma(arr, period)).to.have.lengthOf(size);
    });
 });
