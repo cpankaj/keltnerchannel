@@ -1,6 +1,7 @@
 const expect = require('chai').expect;
 const sma = require('../dist/index').sma;
 const ema = require('../dist/index').ema;
+const kc = require('../dist/index').kc;
 
 describe('Simple Moving Average', function() {
     it('should return an Array', function() {
@@ -48,5 +49,28 @@ describe('Exponential Moving Average', function() {
         let period = 20;
         let size = arr.length - period + 1;
         expect(ema(arr, period)).to.have.lengthOf(size);
+    });
+});
+
+describe('Keltner Channel', function() {
+    let data = [
+        {high: 21, low: 19, close: 19.5},
+        {high: 20, low: 19.4, close: 19.8},
+        {high: 23, low: 21.4, close: 22},
+        {high: 22, low: 20, close: 21}];
+
+    let oSMA = kc(data, 2, 1.5);
+    let oEMA = kc(data, 2, 1.5, false);
+    it('should return an object', function() {
+        expect(oSMA).to.be.an('Object');
+        expect(oEMA).to.be.an('Object');
+    });
+    it('should have upper, mid and lower', function() {
+        expect(oSMA).to.have.property('upper');
+        expect(oSMA).to.have.property('mid');
+        expect(oSMA).to.have.property('lower');
+        expect(oEMA).to.have.property('upper');
+        expect(oEMA).to.have.property('mid');
+        expect(oEMA).to.have.property('lower');
     });
 });

@@ -11,6 +11,23 @@ $ npm install --save keltnerchannel
 
 # Functions
 
+## kc
+
+Calculate Keltner Channel
+
+```javascript
+const kc = require('keltnerchannel').kc;
+
+    let data = [
+        {high: 21, low: 19, close: 19.5},
+        {high: 20, low: 19.4, close: 19.8},
+        {high: 23, low: 21.4, close: 22},
+        {high: 22, low: 20, close: 21}
+    ];
+
+let out = kc(data, 2, 1.5, true); // { upper: [], mid: [], lower: []}
+```
+
 ## sma
 
 Calculate Simple Moving Average
