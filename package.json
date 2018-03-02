@@ -1,6 +1,6 @@
 {
   "name": "keltnerchannel",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Node JS implementation of keltner channel - technical indicator",
   "main": "dist/index.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "lint:fix": "eslint --fix src test",
     "build": "npm run lint:fix && babel src -d dist",
     "prepublishOnly": "npm test",
-    "test": "npm run build && mocha"
+    "test": "npm run build && mocha",
+    "build:clean": "rm -fr dist out"
   },
   "repository": {
     "type": "git",
@@ -16,12 +17,14 @@
   },
   "keywords": [
     "simple moving average",
+    "exponential moving average",
     "volatility squeeze",
     "keltner channel",
     "technical analysis",
     "stocks",
     "trading",
-    "sma"
+    "sma",
+    "ema"
   ],
   "author": "Pankaj C",
   "license": "MIT",
