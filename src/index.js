@@ -1,8 +1,9 @@
 'use strict';
 
-import {sma} from './ma';
+import {sma, ema} from './ma';
 
 module.exports = {
     sma,
+    ema,
 };
 
