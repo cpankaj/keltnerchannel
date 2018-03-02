@@ -13,6 +13,10 @@ export function sma(data, period) {
         throw new Error('Invalid Argument: period should be an Integer');
     }
 
+    if (period <= 0) {
+        throw new Error('Invalid Argument: period should be greater than 0');
+    }
+
     if (data.length === 0) {
         return [];
     }
@@ -54,6 +58,10 @@ export function ema(data, period) {
         throw new Error('Invalid Argument: period should be an Integer');
     }
 
+    if (period <= 0) {
+        throw new Error('Invalid Argument: period should be greater than 0');
+    }
+
     if (data.length === 0) {
         return [];
     }
@@ -63,7 +71,7 @@ export function ema(data, period) {
     }
 
     let mas = [];
-    let multiplier = 2/period;
+    let multiplier = 2/(period + 1);
 
     let sum = 0;
     for (let i = 0; i < period; i++) {
@@ -72,7 +80,7 @@ export function ema(data, period) {
     mas.push(sum/period);
 
     for (let i = period; i < data.length; i++) {
-        let val = ((period[i] - mas[i - period]) * multiplier) + mas[i-period];
+        let val = ((data[i] - mas[i - period]) * multiplier) + mas[i-period];
         mas.push(val);
     }
 

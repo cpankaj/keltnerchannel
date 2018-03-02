@@ -22,5 +22,16 @@ let arr = [2, 4, 4];
 let ma = sma(arr, 2); // [3, 4]
 ```
 
+## ema
+
+Calculate Exponential Moving Average
+
+```javascript
+const ema = require('keltnerchannel').ema;
+
+let arr = [2, 4, 6, 4];
+let ma = ema(arr, 3); // [4, 4]
+```
+
 # License
 The node module is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
