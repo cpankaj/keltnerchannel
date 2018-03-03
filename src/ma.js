@@ -26,20 +26,16 @@ export function sma(data, period) {
     }
 
     let mas = [];
-
     let sum = 0;
+
     for (let i = 0; i < period; i++) {
         sum += data[i];
     }
-    mas.push(sum);
+    mas.push(sum / period);
 
     for (let i = period; i < data.length; i++) {
-        let val = data[i] + mas[i-period] - data[i-period];
-        mas.push(val);
-    }
-
-    for (let i = 0; i < mas.length; i++) {
-        mas[i] /= period;
+        sum += data[i] - data[i - period];
+        mas.push(sum / period);
     }
 
     return mas;
@@ -71,16 +67,16 @@ export function ema(data, period) {
     }
 
     let mas = [];
-    let multiplier = 2/(period + 1);
+    let multiplier = 2 / (period + 1);
 
     let sum = 0;
     for (let i = 0; i < period; i++) {
         sum += data[i];
     }
-    mas.push(sum/period);
+    mas.push(sum / period);
 
     for (let i = period; i < data.length; i++) {
-        let val = ((data[i] - mas[i - period]) * multiplier) + mas[i-period];
+        let val = ((data[i] - mas[i - period]) * multiplier) + mas[i - period];
         mas.push(val);
     }
 

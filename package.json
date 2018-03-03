@@ -1,6 +1,6 @@
 {
   "name": "keltnerchannel",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Node JS implementation of keltner channel - technical indicator",
   "main": "dist/index.js",
   "scripts": {
