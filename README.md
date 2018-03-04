@@ -68,4 +68,4 @@ let out = boll(data, 2, 2, true); // { upper: [], mid: [], lower: []}
 ```
 
 # License
-This node module is available as open source module under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+This node module is available as open source software under the terms of the [MIT License](http://opensource.org/licenses/MIT).
