@@ -50,5 +50,22 @@ let arr = [2, 4, 6, 4];
 let ma = ema(arr, 3); // [4, 4]
 ```
 
+## boll
+
+Calculate Bollinger Band
+
+```javascript
+const kc = require('keltnerchannel').boll;
+
+    let data = [
+        {high: 21, low: 19, close: 19.5},
+        {high: 20, low: 19.4, close: 19.8},
+        {high: 23, low: 21.4, close: 22},
+        {high: 22, low: 20, close: 21}
+    ];
+
+let out = boll(data, 2, 2, true); // { upper: [], mid: [], lower: []}
+```
+
 # License
-The node module is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+This node module is available as open source module under the terms of the [MIT License](http://opensource.org/licenses/MIT).

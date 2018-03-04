@@ -2,6 +2,7 @@ const expect = require('chai').expect;
 const sma = require('../dist/index').sma;
 const ema = require('../dist/index').ema;
 const kc = require('../dist/index').kc;
+const boll = require('../dist/index').boll;
 
 describe('Simple Moving Average', function() {
     it('should return an Array', function() {
@@ -59,18 +60,36 @@ describe('Keltner Channel', function() {
         {high: 23, low: 21.4, close: 22},
         {high: 22, low: 20, close: 21}];
 
-    let oSMA = kc(data, 2, 1.5);
-    let oEMA = kc(data, 2, 1.5, false);
+    let kcSMA = kc(data, 2, 1.5);
+    let kcEMA = kc(data, 2, 1.5, false);
     it('should return an object', function() {
-        expect(oSMA).to.be.an('Object');
-        expect(oEMA).to.be.an('Object');
+        expect(kcSMA).to.be.an('Object');
+        expect(kcEMA).to.be.an('Object');
     });
     it('should have upper, mid and lower', function() {
-        expect(oSMA).to.have.property('upper');
-        expect(oSMA).to.have.property('mid');
-        expect(oSMA).to.have.property('lower');
-        expect(oEMA).to.have.property('upper');
-        expect(oEMA).to.have.property('mid');
-        expect(oEMA).to.have.property('lower');
+        expect(kcSMA).to.have.property('upper');
+        expect(kcSMA).to.have.property('mid');
+        expect(kcSMA).to.have.property('lower');
+        expect(kcEMA).to.have.property('upper');
+        expect(kcEMA).to.have.property('mid');
+        expect(kcEMA).to.have.property('lower');
+    });
+});
+
+describe('Bollinger Band', function() {
+    let arr = [2, 5, 6, 7, 5, 3];
+    let bollSMA = boll(arr, 3, 2);
+    let bollEMA = boll(arr, 3, 2, false);
+    it('should return an object', function() {
+        expect(bollSMA).to.be.an('Object');
+        expect(bollEMA).to.be.an('Object');
+    });
+    it('should have upper, mid and lower', function() {
+        expect(bollSMA).to.have.property('upper');
+        expect(bollSMA).to.have.property('mid');
+        expect(bollSMA).to.have.property('lower');
+        expect(bollEMA).to.have.property('upper');
+        expect(bollEMA).to.have.property('mid');
+        expect(bollEMA).to.have.property('lower');
     });
 });
