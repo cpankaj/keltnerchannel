@@ -2,7 +2,14 @@
 
 [![Build Status](https://travis-ci.org/cpankaj/keltnerchannel.svg?branch=master)](https://travis-ci.org/cpankaj/keltnerchannel)
 
-Node JS module for Keltner Channel - technical indicator
+Node JS module for Keltner Channel technical indicator.
+
+Other technical indicators
+
+ - Simple Moving Average (SMA)
+ - Exponential Moving Average (EMA)
+ - Bollinger Bands
+
 
 # Installation
 ```sh
@@ -57,13 +64,7 @@ Calculate Bollinger Band
 ```javascript
 const kc = require('keltnerchannel').boll;
 
-    let data = [
-        {high: 21, low: 19, close: 19.5},
-        {high: 20, low: 19.4, close: 19.8},
-        {high: 23, low: 21.4, close: 22},
-        {high: 22, low: 20, close: 21}
-    ];
-
+let data = [2, 5, 6, 7, 5, 3];
 let out = boll(data, 2, 2, true); // { upper: [], mid: [], lower: []}
 ```
 
