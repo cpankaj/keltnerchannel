@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/cpankaj/keltnerchannel.svg?branch=master)](https://travis-ci.org/cpankaj/keltnerchannel)
 
-Node JS module for Keltner Channel technical indicator.
+Keltner Channel technical indicator.
 
 Other technical indicators
 
@@ -62,7 +62,7 @@ let ma = ema(arr, 3); // [4, 4]
 Calculate Bollinger Band
 
 ```javascript
-const kc = require('keltnerchannel').boll;
+const boll = require('keltnerchannel').boll;
 
 let data = [2, 5, 6, 7, 5, 3];
 let out = boll(data, 2, 2, true); // { upper: [], mid: [], lower: []}
